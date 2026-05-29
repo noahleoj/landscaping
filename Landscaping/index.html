@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noah's All Star Yard Work — Redondo Beach</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#1d4a2a;--green-mid:#2e6b3e;--green-bright:#3d8a50;
+  --green-light:#d4edda;--green-mist:#eef7f0;
+  --lime:#a8d840;--lime-dark:#7aad1a;--lime-pale:#f0f9e0;
+  --white:#fafffe;--ink:#132018;--ink-mid:#2e4a36;--ink-soft:#567060;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(29,74,42,0.93);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-mark{width:36px;height:36px;background:var(--lime);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1.1rem;font-weight:900;color:var(--green);flex-shrink:0}
+.nav-name{font-size:0.92rem;font-weight:700;color:#fff}
+.nav-name span{color:var(--lime)}
+.nav-cta{background:var(--lime);color:var(--green);font-weight:800;font-size:0.85rem;padding:10px 22px;border-radius:100px;text-decoration:none;transition:transform .15s,background .2s}
+.nav-cta:hover{background:#c2f04a;transform:translateY(-1px)}
+@media(max-width:600px){nav{padding:14px 18px}.nav-name{display:none}}
+
+/* HERO */
+.hero{min-height:100vh;background:var(--green);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 0;position:relative;overflow:hidden}
+.hero-orb{position:absolute;border-radius:50%;pointer-events:none}
+.hero-orb-1{width:600px;height:600px;background:radial-gradient(circle,rgba(168,216,64,.18) 0%,transparent 70%);top:-100px;right:-100px}
+.hero-orb-2{width:380px;height:380px;background:radial-gradient(circle,rgba(168,216,64,.1) 0%,transparent 70%);bottom:0;left:-60px}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(168,216,64,.14);border:1.5px solid rgba(168,216,64,.35);border-radius:100px;padding:7px 18px;font-size:.78rem;font-weight:700;color:var(--lime);letter-spacing:.1em;text-transform:uppercase;margin-bottom:24px;position:relative;z-index:2;animation:fadeUp .6s ease both}
+.tag-dot{width:7px;height:7px;background:var(--lime);border-radius:50%;animation:blink 2s ease infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-family:'Fraunces',serif;font-size:clamp(3.2rem,9vw,7rem);font-weight:900;line-height:.95;color:#fff;margin-bottom:10px;position:relative;z-index:2;animation:fadeUp .6s .1s ease both}
+h1 .lime{color:var(--lime)}
+h1 .italic{font-style:italic;font-weight:400}
+.hero-sub{font-size:clamp(1rem,2.5vw,1.2rem);color:rgba(255,255,255,.6);max-width:520px;line-height:1.6;margin-bottom:14px;position:relative;z-index:2;animation:fadeUp .6s .15s ease both}
+.hero-bike{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:10px 18px;font-size:.88rem;color:rgba(255,255,255,.7);margin-bottom:36px;position:relative;z-index:2;animation:fadeUp .6s .2s ease both}
+.hero-bike strong{color:var(--lime);font-weight:700}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;position:relative;z-index:2;animation:fadeUp .6s .25s ease both}
+.btn-lime{background:var(--lime);color:var(--green);font-weight:800;font-size:1rem;padding:16px 36px;border-radius:100px;text-decoration:none;transition:transform .15s,background .2s;box-shadow:0 4px 28px rgba(168,216,64,.4)}
+.btn-lime:hover{background:#c2f04a;transform:translateY(-2px)}
+.btn-outline{color:rgba(255,255,255,.7);font-size:1rem;font-weight:500;padding:16px 28px;border-radius:100px;text-decoration:none;border:1.5px solid rgba(255,255,255,.2);transition:border-color .2s,color .2s}
+.btn-outline:hover{color:#fff;border-color:rgba(255,255,255,.5)}
+.hero-photo{width:100%;max-width:960px;margin:44px auto 0;position:relative;z-index:2;animation:fadeUp .6s .35s ease both;line-height:0}
+.hero-photo img{width:100%;height:360px;object-fit:cover;object-position:center 60%;display:block;border-radius:20px 20px 0 0}
+.hero-wave{position:relative;z-index:3;line-height:0;margin-top:-2px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+/* BANNER */
+.banner{background:var(--lime);padding:14px 24px;text-align:center;font-size:clamp(.88rem,2vw,1.05rem);font-weight:700;color:var(--green)}
+.banner span{font-weight:400}
+
+/* SHARED */
+.section{padding:88px 24px}
+.container{max-width:1100px;margin:0 auto}
+.label{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green-bright);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.label::before{content:'';width:20px;height:2px;background:var(--lime-dark);border-radius:2px}
+.label.center{justify-content:center}
+.label.light{color:rgba(168,216,64,.8)}
+.label.light::before{background:rgba(168,216,64,.5)}
+h2{font-family:'Fraunces',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;line-height:1.05;color:var(--ink);margin-bottom:16px}
+h2 em{font-style:italic;font-weight:400;color:var(--green-bright)}
+h2.light{color:#fff}
+h2.light em{color:var(--lime)}
+.body-text{font-size:1.05rem;line-height:1.8;color:var(--ink-soft);margin-bottom:16px}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:72px;align-items:center}
+.about-img-wrap{position:relative}
+.about-img-wrap img{width:100%;border-radius:20px;display:block;aspect-ratio:3/4;object-fit:cover;object-position:center top}
+.about-sticker{position:absolute;bottom:-16px;right:-16px;background:var(--lime);color:var(--green);border-radius:16px;padding:16px 20px;font-weight:800;font-size:.9rem;line-height:1.3;box-shadow:0 8px 24px rgba(0,0,0,.12);text-align:center}
+.about-sticker span{display:block;font-family:'Fraunces',serif;font-size:2rem;font-weight:900;line-height:1}
+.price-pill{display:inline-flex;align-items:baseline;gap:6px;background:var(--green-light);border:1.5px solid rgba(61,138,80,.2);border-radius:100px;padding:10px 22px;margin-top:8px}
+.price-big{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:900;color:var(--green);line-height:1}
+.price-label{font-size:.85rem;color:var(--ink-soft)}
+
+/* SERVICES */
+.services-section{background:var(--green);padding:88px 24px;position:relative;overflow:hidden}
+.services-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 110%,rgba(168,216,64,.12) 0%,transparent 60%);pointer-events:none}
+.services-header{text-align:center;margin-bottom:56px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.service-card{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.09);border-radius:20px;padding:36px 28px;transition:background .3s,transform .25s}
+.service-card:hover{background:rgba(255,255,255,.09);transform:translateY(-6px)}
+.service-num{font-family:'Fraunces',serif;font-size:3rem;font-weight:900;color:rgba(168,216,64,.15);line-height:1;margin-bottom:12px}
+.service-title{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:10px}
+.service-desc{font-size:.92rem;line-height:1.7;color:rgba(255,255,255,.5)}
+
+/* BEFORE / AFTER */
+.ba-section{padding:88px 24px;background:var(--white)}
+.ba-tabs{display:flex;gap:10px;margin-bottom:36px;flex-wrap:wrap}
+.ba-tab{background:transparent;border:2px solid var(--green-light);color:var(--ink-soft);font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;font-weight:700;padding:9px 22px;border-radius:100px;cursor:pointer;transition:all .2s}
+.ba-tab.active{background:var(--green);border-color:var(--green);color:#fff}
+.ba-pair{display:none}
+.ba-pair.active{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ba-card{border-radius:16px;overflow:hidden;position:relative}
+.ba-card img{width:100%;height:300px;object-fit:cover;display:block}
+.ba-tag{position:absolute;top:12px;left:12px;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:100px;backdrop-filter:blur(6px)}
+.ba-tag.before{background:rgba(0,0,0,.55);color:#fff}
+.ba-tag.after{background:rgba(29,74,42,.85);color:var(--lime)}
+
+/* HOW */
+.how-section{background:var(--lime-pale);padding:88px 24px}
+.how-header{text-align:center;margin-bottom:56px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;position:relative}
+.steps::before{content:'';position:absolute;top:30px;left:calc(16.6% + 24px);right:calc(16.6% + 24px);height:2px;background:repeating-linear-gradient(90deg,var(--lime-dark) 0,var(--lime-dark) 6px,transparent 6px,transparent 14px);opacity:.4}
+.step{text-align:center}
+.step-circle{width:60px;height:60px;background:var(--green);color:var(--lime);font-family:'Fraunces',serif;font-size:1.6rem;font-weight:900;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.step-title{font-size:1rem;font-weight:800;color:var(--ink);margin-bottom:8px}
+.step-desc{font-size:.9rem;color:var(--ink-soft);line-height:1.65}
+
+/* WHY */
+.why-section{background:var(--white);padding:88px 24px}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px}
+.why-card{background:var(--green-mist);border-radius:20px;padding:32px;border:1.5px solid var(--green-light)}
+.why-card.dark{background:var(--green);border-color:transparent}
+.why-card.dark .why-title{color:#fff}
+.why-card.dark .why-body{color:rgba(255,255,255,.55)}
+.why-icon{font-size:1.8rem;margin-bottom:14px}
+.why-title{font-size:1.05rem;font-weight:800;color:var(--ink);margin-bottom:8px}
+.why-body{font-size:.9rem;line-height:1.65;color:var(--ink-soft)}
+
+/* MAP */
+.map-section{background:var(--green-mist);padding:88px 24px}
+.map-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.map-frame{border-radius:20px;overflow:hidden;border:2px solid var(--green-light)}
+.map-frame iframe{width:100%;height:400px;display:block;border:none}
+.area-list{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:12px}
+.area-item{display:flex;align-items:flex-start;gap:12px;font-size:.93rem;color:var(--ink-mid);line-height:1.5}
+.area-icon{width:34px;height:34px;min-width:34px;background:var(--green-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.95rem;margin-top:1px}
+
+/* CTA */
+.cta-section{background:var(--green);padding:100px 24px;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(168,216,64,.1) 0%,transparent 65%);pointer-events:none}
+.cta-inner{position:relative;z-index:2}
+.phone-link{font-family:'Fraunces',serif;font-size:clamp(2.4rem,6vw,4rem);font-weight:900;color:var(--lime);text-decoration:none;display:block;margin-bottom:8px;transition:color .2s}
+.phone-link:hover{color:#fff}
+.phone-hint{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:36px}
+.cta-divider{width:1px;height:36px;background:rgba(255,255,255,.15);margin:0 auto 32px}
+.cta-sub{font-size:1rem;color:rgba(255,255,255,.5);max-width:420px;margin:0 auto 28px;line-height:1.6}
+
+/* FOOTER */
+footer{background:#0d2216;padding:32px 24px;text-align:center}
+.footer-name{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:rgba(255,255,255,.4);margin-bottom:6px}
+.footer-sub{font-size:.8rem;color:rgba(255,255,255,.2);letter-spacing:.04em}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .about-grid,.map-layout{grid-template-columns:1fr;gap:40px}
+  .about-img-wrap{max-width:360px;margin:0 auto}
+  .services-grid,.steps,.why-grid{grid-template-columns:1fr}
+  .steps::before{display:none}
+  .ba-pair.active{grid-template-columns:1fr}
+  .ba-card img{height:220px}
+  .section,.services-section,.how-section,.why-section,.map-section,.cta-section,.ba-section{padding:64px 20px}
+  .hero-photo img{height:220px}
+}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">
+    <div class="nav-mark">N</div>
+    <span class="nav-name">Noah's <span>Yard Work</span></span>
+  </a>
+  <a href="sms:+13103675683&body=Yard%20Work" class="nav-cta">📱 Text to Book</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="hero-tag">
+    <span class="tag-dot"></span>
+    Redondo Beach &nbsp;·&nbsp; Available Now
+  </div>
+
+  <h1>Your Yard,<br><span class="lime italic">Handled.</span></h1>
+
+  <p class="hero-sub">
+    Hi, I'm Noah — a 13-year-old from Redondo Beach. I bike or walk to your place and handle all the yard stuff you don't want to deal with.
+  </p>
+
+  <div class="hero-bike">
+    🚲 &nbsp; I ride or walk to every job — totally local, no car needed
+  </div>
+
+  <div class="hero-actions">
+    <a href="sms:+13103675683&body=Yard%20Work" class="btn-lime">📱 Text Me to Book</a>
+    <a href="#services" class="btn-outline">See What I Do ↓</a>
+  </div>
+
+  <div class="hero-photo">
+    <img src="images/hero-bg.jpeg" alt="Noah doing yard work in Redondo Beach">
+  </div>
+
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 64" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;display:block">
+      <path d="M0,64 L0,36 Q180,4 360,32 Q540,58 720,28 Q900,4 1080,34 Q1260,60 1440,24 L1440,64 Z" fill="#fafffe"/>
+    </svg>
+  </div>
+</section>
+
+<!-- BANNER -->
+<div class="banner">
+  🌿 Services starting at $20 &nbsp;·&nbsp; <span>Text "Yard Work" to 310-367-5683 for a quote</span>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <img src="images/noah.jpeg" alt="Noah, owner of Noah's All Star Yard Work">
+        <div class="about-sticker">
+          <span>$20+</span>
+          Starting Price
+        </div>
+      </div>
+      <div class="reveal d1">
+        <p class="label">Who I Am</p>
+        <h2>A 13-year-old who actually <em>shows up</em></h2>
+        <p class="body-text">
+          I started this business because I wanted to earn my own money doing something real. I'm not a company — I'm just a motivated kid from Redondo Beach with a bike and a strong work ethic.
+        </p>
+        <p class="body-text">
+          Every yard I take on gets my full effort. No rushing, no cutting corners. When I say I'll be there, I'll be there.
+        </p>
+        <div class="price-pill">
+          <span class="price-big">$20+</span>
+          <span class="price-label">text me for a custom quote</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="services-header reveal">
+      <p class="label center light">What I Do</p>
+      <h2 class="light">Three things I'm <em>really good at</em></h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <div class="service-title">🍂 Leaf Raking &amp; Yard Cleanup</div>
+        <p class="service-desc">I clear out leaves and debris, bag everything up, and leave your yard looking clean and tidy.</p>
+      </div>
+      <div class="service-card reveal d1">
+        <div class="service-num">02</div>
+        <div class="service-title">🌿 Weed Removal</div>
+        <p class="service-desc">I pull weeds from your flower beds, walkways, and garden edges so everything looks sharp and neat.</p>
+      </div>
+      <div class="service-card reveal d2">
+        <div class="service-num">03</div>
+        <div class="service-title">🪣 Trash Can Cleaning</div>
+        <p class="service-desc">I power wash your bins inside and out with soap, clear out spider webs, and leave them smelling way better.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE & AFTER -->
+<section class="ba-section" id="results">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:32px">
+      <p class="label">My Work</p>
+      <h2>Before &amp; <em>After</em></h2>
+      <p class="body-text" style="max-width:520px">Real results from actual jobs I've done in the neighborhood. See the difference.</p>
+    </div>
+
+    <div class="ba-tabs reveal">
+      <button class="ba-tab active" onclick="switchBA(this,'yard')">🌿 Yard Cleanup</button>
+      <button class="ba-tab" onclick="switchBA(this,'trash')">🪣 Trash Can Cleaning</button>
+    </div>
+
+    <!-- YARD: overgrown (before) → trimmed (after) -->
+    <div class="ba-pair active" id="ba-yard">
+      <div class="ba-card">
+        <img src="images/overgrown.jpeg" alt="Overgrown yard before cleanup">
+        <span class="ba-tag before">Before</span>
+      </div>
+      <div class="ba-card">
+        <img src="images/trimmed.jpeg" alt="Clean trimmed yard after cleanup">
+        <span class="ba-tag after">After</span>
+      </div>
+    </div>
+
+    <!-- TRASH: beforeafter.jpeg split display -->
+    <div class="ba-pair" id="ba-trash">
+      <div class="ba-card">
+        <img src="images/before.jpeg" alt="Trash can before and after cleaning" style="object-position:left center">
+        <span class="ba-tag before">Before</span>
+      </div>
+      <div class="ba-card">
+        <img src="images/after.jpeg" alt="Trash can after cleaning" style="object-position:right center">
+        <span class="ba-tag after">After</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div class="container">
+    <div class="how-header reveal">
+      <p class="label center">How It Works</p>
+      <h2>Super easy to get <em>started</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-circle">1</div>
+        <div class="step-title">Text me "Yard Work"</div>
+        <p class="step-desc">Send a text to <strong>310-367-5683</strong>. Tell me what you need done and your address.</p>
+      </div>
+      <div class="step reveal d1">
+        <div class="step-circle">2</div>
+        <div class="step-title">We pick a day</div>
+        <p class="step-desc">I'm flexible — weekends or after school on weekdays. I'll come right to you.</p>
+      </div>
+      <div class="step reveal d2">
+        <div class="step-circle">3</div>
+        <div class="step-title">Sit back &amp; relax</div>
+        <p class="step-desc">I handle everything and you pay me when I'm done. Starting at $20, priced by job.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY HIRE NOAH -->
+<section class="why-section" id="why">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <p class="label center">Why Hire Me</p>
+      <h2>Honestly? <em>Why not.</em></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">💰</div>
+        <div class="why-title">Way cheaper than a landscaping company</div>
+        <p class="why-body">Big services charge a ton. I start at $20. You're supporting a local kid, not a corporation.</p>
+      </div>
+      <div class="why-card dark reveal d1">
+        <div class="why-icon">✅</div>
+        <div class="why-title">I actually do a good job</div>
+        <p class="why-body">I take pride in my work. I want repeat customers — so I do it right every single time.</p>
+      </div>
+      <div class="why-card dark reveal d1">
+        <div class="why-icon">⚡</div>
+        <div class="why-title">Fast reply, flexible schedule</div>
+        <p class="why-body">I text back quick. Weekends or after school — I work around what's convenient for you.</p>
+      </div>
+      <div class="why-card reveal d2">
+        <div class="why-icon">🤝</div>
+        <div class="why-title">Supporting a young entrepreneur</div>
+        <p class="why-body">I built this business from scratch at 13. Every booking helps me grow and learn.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-section" id="area">
+  <div class="container">
+    <div class="map-layout">
+      <div class="reveal">
+        <p class="label">Where I Go</p>
+        <h2>Serving <em>Redondo Beach</em> &amp; nearby</h2>
+        <p class="body-text">Since I travel by bike and on foot, I stay within Redondo Beach and close surrounding neighborhoods. Not sure if you're in range? Just text me!</p>
+        <ul class="area-list">
+          <li class="area-item">
+            <div class="area-icon">📍</div>
+            <div><strong>Redondo Beach</strong> — North Redondo, South Redondo, Hollywood Riviera</div>
+          </li>
+          <li class="area-item">
+            <div class="area-icon">🏖️</div>
+            <div><strong>Nearby:</strong> Hermosa Beach, parts of Torrance &amp; Lawndale</div>
+          </li>
+          <li class="area-item">
+            <div class="area-icon">❓</div>
+            <div>Not sure if you're in range? Text me your street and I'll let you know!</div>
+          </li>
+        </ul>
+      </div>
+      <div class="map-frame reveal d1">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13231.5!2d-118.3884!3d33.8489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b4e6b2b1b1b1%3A0x1!2sRedondo+Beach%2C+CA!5e0!3m2!1sen!2sus!4v1"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Redondo Beach service area">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner reveal">
+    <p class="label center light">Ready to Book?</p>
+    <h2 class="light" style="margin-bottom:10px">Let's get your yard<br><em>cleaned up</em></h2>
+    <p class="cta-sub">No app. No contract. Text me "Yard Work" and I'll handle the rest. Prices start at $20 — we'll figure out the details together.</p>
+    <a href="sms:+13103675683&body=Yard%20Work" class="phone-link">310-367-5683</a>
+    <p class="phone-hint">Text "Yard Work" to get started</p>
+    <div class="cta-divider"></div>
+    <a href="sms:+13103675683&body=Yard%20Work" class="btn-lime" style="font-size:1.05rem;padding:18px 48px">📱 Send Me a Text</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-name">Noah's All Star Yard Work</p>
+  <p class="footer-sub">Redondo Beach, CA &nbsp;·&nbsp; (310) 367-5683 &nbsp;·&nbsp; Starting at $20 &nbsp;·&nbsp; A 13-year-old's hustle 🚲</p>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)} });
+},{threshold:0.1});
+reveals.forEach(el => obs.observe(el));
+
+function switchBA(btn, type) {
+  document.querySelectorAll('.ba-pair').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.ba-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('ba-' + type).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
