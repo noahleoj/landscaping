@@ -2,1281 +2,206 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Noah's All Star Yard Work is a local Redondo Beach yard cleanup service run by Noah, a 13-year-old neighborhood entrepreneur. Text 310-906-0130 to book.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Noah's All Star Yard Work helps neighbors in Redondo Beach and South Torrance with simple yard cleanup, weed removal, and trash can cleaning. Text 310-906-0130 to book.">
 <title>Noah's All Star Yard Work | Redondo Beach</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --forest:#12371f;
-  --forest-2:#194b2a;
-  --leaf:#2d7a43;
-  --leaf-2:#3e9654;
-  --lime:#bdec49;
-  --lime-soft:#e8ffa2;
+  --green:#143b22;
+  --green-2:#1f5a33;
+  --green-3:#2e7545;
+  --lime:#b8ec42;
+  --lime-soft:#e6ff9a;
   --cream:#fbfff7;
-  --mist:#eef8ed;
-  --white:#fff;
-  --ink:#122018;
-  --ink-soft:#526b5c;
-  --line:rgba(18,55,31,.13);
-  --shadow:0 20px 60px rgba(17,48,28,.14);
-  --shadow-strong:0 28px 80px rgba(6,25,13,.32);
-  --radius:28px;
+  --mist:#eff7ec;
+  --white:#ffffff;
+  --ink:#152017;
+  --soft:#536857;
+  --line:rgba(20,59,34,.14);
+  --shadow:0 18px 48px rgba(20,59,34,.14);
+  --radius:22px;
 }
+*{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  background:var(--cream);
-  color:var(--ink);
-  overflow-x:hidden;
-}
-body.has-sticky{padding-bottom:86px}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
 a{color:inherit}
-img{max-width:100%;display:block}
-button,input{font:inherit}
-::selection{background:var(--lime);color:var(--forest)}
-[id]{scroll-margin-top:86px}
+img{display:block;max-width:100%}
 
-/* NAV */
-.nav{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:1000;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  padding:14px clamp(18px,4vw,48px);
-  background:rgba(18,55,31,.88);
-  border-bottom:1px solid rgba(255,255,255,.08);
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
-}
-.nav-brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  color:#fff;
-  text-decoration:none;
-}
-.nav-mark{
-  width:42px;
-  height:42px;
-  border-radius:14px;
-  background:linear-gradient(135deg,var(--lime),var(--lime-soft));
-  color:var(--forest);
-  display:grid;
-  place-items:center;
-  font-family:'Fraunces',serif;
-  font-weight:900;
-  font-size:1.15rem;
-  box-shadow:0 10px 30px rgba(189,236,73,.25);
-}
-.nav-copy{display:flex;flex-direction:column;line-height:1.05}
-.nav-name{font-weight:900;font-size:.95rem;letter-spacing:-.02em}
-.nav-sub{font-size:.68rem;color:rgba(255,255,255,.62);font-weight:900;text-transform:uppercase;letter-spacing:.13em;margin-top:5px}
-.nav-links{display:flex;align-items:center;gap:6px}
-.nav-links a{
-  text-decoration:none;
-  color:rgba(255,255,255,.74);
-  font-weight:900;
-  font-size:.84rem;
-  padding:10px 12px;
-  border-radius:999px;
-  transition:background .2s,color .2s,transform .2s;
-}
-.nav-links a:hover{background:rgba(255,255,255,.08);color:#fff;transform:translateY(-1px)}
-.nav-cta{
-  background:linear-gradient(135deg,var(--lime),var(--lime-soft))!important;
-  color:var(--forest)!important;
-  padding:11px 19px!important;
-  box-shadow:0 12px 32px rgba(189,236,73,.24);
-}
+/* Header */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(20,59,34,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{width:min(1080px,100%);margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff;min-width:0}
+.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--lime),var(--lime-soft));color:var(--green);display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:900;font-size:1.15rem;flex:0 0 auto}
+.brand-text{font-weight:900;letter-spacing:-.03em;line-height:1.1;font-size:.98rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-cta{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;background:var(--lime);color:var(--green);font-weight:900;border-radius:999px;padding:11px 17px;min-height:44px;white-space:nowrap;box-shadow:0 8px 22px rgba(184,236,66,.24)}
+.nav-cta:hover{background:var(--lime-soft)}
 
-/* HERO */
-.hero{
-  position:relative;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 18% 16%,rgba(189,236,73,.17),transparent 26%),
-    radial-gradient(circle at 88% 28%,rgba(255,255,255,.08),transparent 25%),
-    linear-gradient(145deg,#0f2a19 0%,#194b2a 50%,#0e2918 100%);
-  color:#fff;
-  padding:120px 22px 0;
-  text-align:center;
-}
-.hero::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background-image:
-    linear-gradient(rgba(255,255,255,.036) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.036) 1px,transparent 1px);
-  background-size:46px 46px;
-  mask-image:linear-gradient(to bottom,black,rgba(0,0,0,.78),transparent 88%);
-  pointer-events:none;
-}
-.hero-inner{
-  width:min(1040px,100%);
-  margin:0 auto;
-  position:relative;
-  z-index:2;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
-.hero-kicker{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  background:rgba(255,255,255,.085);
-  border:1px solid rgba(255,255,255,.16);
-  color:#ebffc2;
-  border-radius:999px;
-  padding:8px 16px;
-  margin-bottom:20px;
-  font-weight:900;
-  font-size:.75rem;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-}
-.status-dot{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:var(--lime);
-  box-shadow:0 0 0 7px rgba(189,236,73,.16);
-}
-h1{
-  font-family:'Fraunces',serif;
-  font-size:clamp(3.6rem,10vw,8rem);
-  line-height:.88;
-  letter-spacing:-.065em;
-  font-weight:900;
-  max-width:920px;
-  margin-bottom:20px;
-}
-h1 span{color:var(--lime);font-style:italic;font-weight:600}
-.hero-sub{
-  max-width:680px;
-  font-size:clamp(1.02rem,2vw,1.23rem);
-  line-height:1.7;
-  color:rgba(255,255,255,.72);
-  margin-bottom:22px;
-}
-.hero-sub strong{color:#fff;font-weight:900}
-.hero-badges{
-  display:grid;
-  grid-template-columns:repeat(4,max-content);
-  justify-content:center;
-  gap:10px;
-  margin-bottom:28px;
-}
-.badge{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  min-height:42px;
-  color:rgba(255,255,255,.84);
-  background:rgba(255,255,255,.075);
-  border:1px solid rgba(255,255,255,.14);
-  border-radius:999px;
-  padding:10px 14px;
-  font-size:.86rem;
-  font-weight:900;
-  white-space:nowrap;
-}
-.badge strong{color:var(--lime)}
-.hero-actions{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-bottom:42px;
-}
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:9px;
-  min-height:54px;
-  padding:16px 28px;
-  border-radius:999px;
-  border:0;
-  text-decoration:none;
-  font-size:1rem;
-  font-weight:900;
-  transition:transform .2s,box-shadow .2s,background .2s,border-color .2s;
-}
-.btn-primary{
-  background:linear-gradient(135deg,var(--lime),var(--lime-soft));
-  color:var(--forest);
-  box-shadow:0 18px 48px rgba(189,236,73,.28);
-}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 22px 58px rgba(189,236,73,.34)}
-.btn-secondary{
-  color:#fff;
-  border:1px solid rgba(255,255,255,.22);
-  background:rgba(255,255,255,.06);
-}
-.btn-secondary:hover{transform:translateY(-2px);background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.42)}
-.hero-card{
-  position:relative;
-  z-index:2;
-  width:min(1020px,100%);
-  margin:0 auto;
-  border-radius:34px 34px 0 0;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.16);
-  box-shadow:var(--shadow-strong);
-  background:rgba(255,255,255,.08);
-}
-.hero-card img{
-  width:100%;
-  height:360px;
-  object-fit:cover;
-  object-position:center 60%;
-  filter:saturate(1.05) contrast(1.02);
-}
-.hero-card::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to top,rgba(9,28,15,.76),rgba(9,28,15,.18) 42%,transparent 72%);
-  pointer-events:none;
-}
-.hero-card-content{
-  position:absolute;
-  left:20px;
-  right:20px;
-  bottom:20px;
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:14px;
-  align-items:end;
-  z-index:2;
-  text-align:left;
-}
-.quote-card{
-  width:min(470px,100%);
-  background:rgba(255,255,255,.92);
-  border:1px solid rgba(255,255,255,.7);
-  border-radius:22px;
-  padding:16px 18px;
-  color:var(--ink);
-  box-shadow:0 14px 42px rgba(0,0,0,.18);
-  backdrop-filter:blur(14px);
-}
-.quote-card small{
-  display:block;
-  color:var(--leaf);
-  font-size:.72rem;
-  text-transform:uppercase;
-  letter-spacing:.13em;
-  font-weight:900;
-  margin-bottom:5px;
-}
-.quote-card b{font-size:1rem;line-height:1.35}
-.price-chip{
-  background:linear-gradient(135deg,var(--lime),var(--lime-soft));
-  color:var(--forest);
-  border-radius:22px;
-  padding:16px 20px;
-  text-align:center;
-  min-width:138px;
-  box-shadow:0 18px 42px rgba(0,0,0,.22);
-}
-.price-chip strong{
-  display:block;
-  font-family:'Fraunces',serif;
-  font-size:2.25rem;
-  font-weight:900;
-  line-height:.9;
-  letter-spacing:-.06em;
-}
-.price-chip span{
-  display:block;
-  margin-top:3px;
-  font-size:.72rem;
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:.1em;
-}
-.hero-wave{
-  position:relative;
-  z-index:3;
-  width:100%;
-  line-height:0;
-  margin-top:-1px;
-}
+/* Hero */
+.hero{background:linear-gradient(160deg,#102d1b 0%,#184728 55%,#102d1b 100%);color:#fff;padding:38px 18px 34px;position:relative;overflow:hidden}
+.hero:before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:42px 42px;opacity:.75;pointer-events:none}
+.hero-inner{width:min(1080px,100%);margin:0 auto;display:grid;grid-template-columns:1.04fr .96fr;gap:34px;align-items:center;position:relative;z-index:2}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:900;color:#e8ffc0;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.13);border-radius:999px;padding:8px 13px;margin-bottom:18px}
+.kicker span{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 6px rgba(184,236,66,.16)}
+h1{font-family:'Fraunces',serif;font-size:clamp(2.75rem,8vw,5.5rem);line-height:.93;letter-spacing:-.055em;margin-bottom:16px}
+h1 em{font-style:italic;color:var(--lime)}
+.hero-copy{font-size:1.08rem;line-height:1.72;color:rgba(255,255,255,.77);max-width:560px;margin-bottom:18px}
+.hero-copy strong{color:#fff;font-weight:900}
+.hero-points{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.point{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.08);border-radius:999px;padding:8px 12px;font-size:.85rem;font-weight:800;color:rgba(255,255,255,.86)}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:14px 24px;border-radius:999px;text-decoration:none;font-weight:900;font-size:.98rem;transition:transform .16s ease,background .16s ease,border-color .16s ease}
+.btn-primary{background:linear-gradient(135deg,var(--lime),var(--lime-soft));color:var(--green);box-shadow:0 12px 34px rgba(184,236,66,.28)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-secondary{border:1px solid rgba(255,255,255,.22);color:#fff;background:rgba(255,255,255,.07)}
+.btn-secondary:hover{border-color:rgba(255,255,255,.42);background:rgba(255,255,255,.11)}
+.hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:28px;padding:10px;box-shadow:0 24px 70px rgba(0,0,0,.28)}
+.hero-card img{width:100%;height:355px;object-fit:cover;object-position:center 60%;border-radius:21px}
+.hero-photo-note{display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:center;background:#fff;color:var(--ink);border-radius:18px;margin-top:10px;padding:13px 14px}
+.hero-photo-note b{display:block;font-size:.92rem;margin-bottom:2px}
+.hero-photo-note span{font-size:.82rem;color:var(--soft);font-weight:700;line-height:1.45}
+.noah-avatar{width:46px;height:46px;border-radius:15px;object-fit:cover;object-position:center top;background:var(--mist);border:1px solid var(--line)}
 
-/* SHARED */
-.section{padding:88px 22px}
-.container{width:min(1120px,100%);margin:0 auto}
-.eyebrow{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  color:var(--leaf);
-  font-size:.73rem;
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:.13em;
-  margin-bottom:14px;
-}
-.eyebrow::before{content:'';width:24px;height:3px;background:var(--lime);border-radius:99px}
-.center{text-align:center}
-.center .eyebrow{justify-content:center}
-.center .eyebrow::after{content:'';width:24px;height:3px;background:var(--lime);border-radius:99px}
-h2{
-  font-family:'Fraunces',serif;
-  font-size:clamp(2.15rem,4.6vw,3.55rem);
-  line-height:1.02;
-  letter-spacing:-.045em;
-  font-weight:900;
-  color:var(--ink);
-  margin-bottom:16px;
-}
-h2 em{color:var(--leaf);font-style:italic;font-weight:600}
-.section-lead{
-  color:var(--ink-soft);
-  font-size:1.05rem;
-  line-height:1.78;
-  max-width:680px;
-}
-.center .section-lead{margin-inline:auto}
+/* Sections */
+.section{padding:58px 18px}
+.container{width:min(1080px,100%);margin:0 auto}
+.section-head{margin-bottom:24px;text-align:center}
+.eyebrow{font-size:.76rem;text-transform:uppercase;letter-spacing:.13em;color:var(--green-3);font-weight:900;margin-bottom:8px}
+h2{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.1rem);line-height:1.04;letter-spacing:-.04em;color:var(--ink)}
+.lead{font-size:1rem;line-height:1.7;color:var(--soft);max-width:620px;margin:12px auto 0}
 
-/* TRUST BAR */
-.trust-bar{
-  background:linear-gradient(135deg,var(--lime),var(--lime-soft));
-  color:var(--forest);
-  padding:15px 22px;
-  text-align:center;
-  font-weight:900;
-  font-size:.94rem;
-}
-.trust-bar span{opacity:.75;font-weight:700}
+/* Services */
+.services{background:var(--cream)}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.service-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:23px;box-shadow:0 12px 34px rgba(20,59,34,.08)}
+.service-icon{width:48px;height:48px;border-radius:16px;background:var(--mist);display:grid;place-items:center;font-size:1.45rem;margin-bottom:14px}
+.service-card h3{font-size:1.04rem;letter-spacing:-.02em;margin-bottom:8px}
+.service-card p{font-size:.92rem;line-height:1.62;color:var(--soft);font-weight:650}
 
-/* ABOUT */
-.about{background:linear-gradient(180deg,var(--cream),#fff)}
-.about-grid{
-  display:grid;
-  grid-template-columns:.92fr 1.08fr;
-  gap:64px;
-  align-items:center;
-}
-.about-photo{
-  position:relative;
-  border-radius:30px;
-  overflow:visible;
-}
-.about-photo img{
-  width:100%;
-  height:520px;
-  object-fit:cover;
-  object-position:center top;
-  border-radius:30px;
-  border:1px solid rgba(18,55,31,.08);
-  box-shadow:var(--shadow);
-  background:var(--mist);
-}
-.about-sticker{
-  position:absolute;
-  right:-16px;
-  bottom:30px;
-  max-width:190px;
-  color:#fff;
-  background:var(--forest);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:22px;
-  padding:16px 18px;
-  box-shadow:0 22px 60px rgba(18,55,31,.25);
-}
-.about-sticker strong{
-  display:block;
-  color:var(--lime);
-  font-family:'Fraunces',serif;
-  font-size:2rem;
-  line-height:.95;
-  font-weight:900;
-}
-.about-sticker span{
-  display:block;
-  margin-top:5px;
-  color:rgba(255,255,255,.78);
-  font-size:.82rem;
-  line-height:1.45;
-  font-weight:800;
-}
-.about-copy p{
-  color:var(--ink-soft);
-  font-size:1.03rem;
-  line-height:1.85;
-  margin-bottom:16px;
-}
-.quick-facts{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin-top:28px;
-}
-.fact{
-  background:var(--mist);
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:17px 15px;
-}
-.fact b{display:block;color:var(--forest);font-size:1.06rem;margin-bottom:4px}
-.fact span{color:var(--ink-soft);font-size:.82rem;font-weight:700;line-height:1.45}
+/* Before After */
+.results{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.tab{appearance:none;border:1.5px solid var(--line);background:var(--cream);color:var(--soft);font:inherit;font-size:.9rem;font-weight:900;border-radius:999px;padding:10px 16px;min-height:44px;cursor:pointer}
+.tab.active{background:var(--green);border-color:var(--green);color:#fff}
+.ba-set{display:none}
+.ba-set.active{display:block}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
+.ba-card{background:var(--cream);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+.ba-img-wrap{position:relative;background:var(--mist)}
+.ba-img-wrap img{width:100%;height:310px;object-fit:cover;object-position:center center}
+.ba-label{position:absolute;left:12px;top:12px;background:rgba(21,32,23,.82);color:#fff;border-radius:999px;padding:7px 12px;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;font-weight:900;backdrop-filter:blur(8px)}
+.ba-label.after{background:rgba(20,59,34,.92);color:var(--lime)}
+.ba-caption{padding:14px 16px;font-weight:900;line-height:1.45;color:var(--ink)}
+.ba-note{text-align:center;color:var(--soft);font-size:.92rem;font-weight:700;line-height:1.6;margin-top:16px}
 
-/* SERVICES */
-.services{
-  background:var(--forest);
-  color:#fff;
-  position:relative;
-  overflow:hidden;
-}
-.services::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at 18% 8%,rgba(189,236,73,.15),transparent 30%),
-    radial-gradient(circle at 88% 92%,rgba(255,255,255,.08),transparent 28%);
-  pointer-events:none;
-}
-.services .container{position:relative;z-index:2}
-.services h2{color:#fff}
-.services h2 em{color:var(--lime)}
-.services .section-lead{color:rgba(255,255,255,.64)}
-.services .eyebrow{color:var(--lime)}
-.services-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-  margin-top:46px;
-}
-.service-card{
-  position:relative;
-  overflow:hidden;
-  min-height:292px;
-  background:rgba(255,255,255,.065);
-  border:1px solid rgba(255,255,255,.11);
-  border-radius:28px;
-  padding:30px;
-  transition:transform .25s,background .25s,border-color .25s;
-}
-.service-card:hover{transform:translateY(-7px);background:rgba(255,255,255,.095);border-color:rgba(189,236,73,.32)}
-.service-card::after{
-  content:attr(data-number);
-  position:absolute;
-  top:12px;
-  right:20px;
-  font-family:'Fraunces',serif;
-  font-size:5.2rem;
-  line-height:1;
-  font-weight:900;
-  color:rgba(189,236,73,.09);
-}
-.service-icon{
-  width:58px;
-  height:58px;
-  border-radius:20px;
-  display:grid;
-  place-items:center;
-  background:rgba(189,236,73,.14);
-  border:1px solid rgba(189,236,73,.2);
-  font-size:1.65rem;
-  margin-bottom:22px;
-}
-.service-card h3{font-size:1.2rem;line-height:1.25;margin-bottom:12px;letter-spacing:-.02em}
-.service-card p{color:rgba(255,255,255,.62);font-size:.95rem;line-height:1.72;margin-bottom:20px}
-.service-card ul{list-style:none;display:grid;gap:9px;color:rgba(255,255,255,.78);font-size:.87rem;font-weight:750}
-.service-card li{display:flex;gap:8px;align-items:flex-start}
-.service-card li::before{content:'✓';color:var(--lime);font-weight:900}
-.service-note{
-  max-width:720px;
-  margin:22px auto 0;
-  color:rgba(255,255,255,.66);
-  text-align:center;
-  font-size:.94rem;
-  line-height:1.7;
-}
-.service-note strong{color:#fff}
-
-/* PERFECT FOR */
-.perfect{background:var(--mist);padding:76px 22px}
-.perfect-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:14px;
-  margin-top:34px;
-}
-.perfect-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:22px;
-  box-shadow:0 15px 42px rgba(18,55,31,.07);
-}
-.perfect-card div{font-size:1.45rem;margin-bottom:12px}
-.perfect-card h3{font-size:1rem;margin-bottom:7px}
-.perfect-card p{font-size:.86rem;line-height:1.6;color:var(--ink-soft);font-weight:650}
-
-/* RESULTS */
-.results{background:#fff}
-.results-top{
-  display:grid;
-  grid-template-columns:1fr auto;
-  align-items:end;
-  gap:24px;
-  margin-bottom:34px;
-}
-.tabs{
-  display:flex;
-  gap:9px;
-  flex-wrap:wrap;
-  justify-content:flex-end;
-}
-.tab{
-  appearance:none;
-  cursor:pointer;
-  border:1.5px solid var(--line);
-  background:var(--cream);
-  color:var(--ink-soft);
-  border-radius:999px;
-  padding:11px 17px;
-  font-size:.88rem;
-  font-weight:900;
-  transition:background .2s,color .2s,border-color .2s,transform .2s;
-}
-.tab:hover{transform:translateY(-1px)}
-.tab.active{background:var(--forest);border-color:var(--forest);color:#fff}
-.ba-panel{display:none}
-.ba-panel.active{display:block}
-.compare-card{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) 310px;
-  gap:20px;
-  align-items:stretch;
-}
-.comparison{
-  --position:50%;
-  position:relative;
-  overflow:hidden;
-  border-radius:30px;
-  background:var(--mist);
-  border:1px solid var(--line);
-  box-shadow:var(--shadow);
-  aspect-ratio:16/9;
-  isolation:isolate;
-}
-.comparison img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  user-select:none;
-  -webkit-user-drag:none;
-}
-.comparison .before-img{
-  z-index:2;
-  clip-path:inset(0 calc(100% - var(--position)) 0 0);
-}
-.comparison::after{
-  content:'';
-  position:absolute;
-  top:0;
-  bottom:0;
-  left:var(--position);
-  width:3px;
-  background:#fff;
-  transform:translateX(-50%);
-  z-index:4;
-  box-shadow:0 0 0 1px rgba(18,55,31,.18),0 0 24px rgba(0,0,0,.22);
-  pointer-events:none;
-}
-.compare-handle{
-  position:absolute;
-  top:50%;
-  left:var(--position);
-  z-index:5;
-  width:54px;
-  height:54px;
-  transform:translate(-50%,-50%);
-  border-radius:50%;
-  background:linear-gradient(135deg,var(--lime),var(--lime-soft));
-  color:var(--forest);
-  border:3px solid #fff;
-  box-shadow:0 14px 40px rgba(0,0,0,.28);
-  display:grid;
-  place-items:center;
-  font-weight:900;
-  pointer-events:none;
-}
-.compare-label{
-  position:absolute;
-  top:16px;
-  z-index:6;
-  border-radius:999px;
-  padding:7px 13px;
-  font-size:.75rem;
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:.11em;
-  backdrop-filter:blur(10px);
-}
-.compare-label.before{left:16px;background:rgba(0,0,0,.64);color:#fff}
-.compare-label.after{right:16px;background:rgba(18,55,31,.9);color:var(--lime)}
-.compare-range{
-  position:absolute;
-  inset:0;
-  z-index:7;
-  width:100%;
-  height:100%;
-  opacity:0;
-  cursor:ew-resize;
-  touch-action:none;
-}
-.compare-range:focus-visible + .compare-handle{
-  outline:4px solid rgba(189,236,73,.45);
-  outline-offset:4px;
-}
-.compare-side{
-  background:var(--cream);
-  border:1px solid var(--line);
-  border-radius:28px;
-  padding:24px;
-  box-shadow:0 16px 42px rgba(18,55,31,.08);
-}
-.compare-side small{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  color:var(--leaf);
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  font-size:.72rem;
-  font-weight:900;
-  margin-bottom:12px;
-}
-.compare-side h3{
-  font-family:'Fraunces',serif;
-  font-size:2rem;
-  line-height:1;
-  letter-spacing:-.04em;
-  margin-bottom:12px;
-}
-.compare-side p{
-  color:var(--ink-soft);
-  line-height:1.68;
-  font-weight:650;
-  font-size:.94rem;
-  margin-bottom:16px;
-}
-.drag-tip{
-  display:inline-flex;
-  align-items:center;
-  gap:9px;
-  padding:10px 13px;
-  border-radius:999px;
-  background:var(--mist);
-  color:var(--forest);
-  font-size:.83rem;
-  font-weight:900;
-}
-
-/* HOW */
-.how{background:linear-gradient(180deg,var(--cream),var(--mist))}
-.steps{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-  margin-top:44px;
-}
-.step{
-  position:relative;
-  overflow:hidden;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:28px;
-  padding:30px;
-  box-shadow:0 18px 52px rgba(18,55,31,.08);
-}
-.step-number{
-  width:58px;
-  height:58px;
-  display:grid;
-  place-items:center;
-  background:var(--forest);
-  color:var(--lime);
-  border-radius:20px;
-  font-family:'Fraunces',serif;
-  font-size:1.65rem;
-  font-weight:900;
-  margin-bottom:20px;
-}
-.step h3{font-size:1.15rem;margin-bottom:10px}
-.step p{color:var(--ink-soft);font-size:.94rem;line-height:1.72;font-weight:650}
-.step strong{color:var(--forest);font-weight:900}
-
-/* WHY */
-.why{background:#fff}
-.why-grid{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:18px;
-  margin-top:42px;
-}
-.why-main{
-  position:relative;
-  overflow:hidden;
-  background:var(--forest);
-  color:#fff;
-  border-radius:30px;
-  padding:36px;
-  box-shadow:var(--shadow);
-}
-.why-main::after{
-  content:'13';
-  position:absolute;
-  right:-8px;
-  bottom:-38px;
-  font-family:'Fraunces',serif;
-  font-size:12rem;
-  line-height:.8;
-  font-weight:900;
-  color:rgba(189,236,73,.12);
-}
-.why-main h3{
-  font-family:'Fraunces',serif;
-  font-size:2.3rem;
-  line-height:1;
-  letter-spacing:-.04em;
-  margin-bottom:16px;
-}
-.why-main h3 em{color:var(--lime);font-weight:600}
-.why-main p{
-  position:relative;
-  z-index:2;
-  max-width:560px;
-  color:rgba(255,255,255,.68);
-  line-height:1.78;
-  font-weight:650;
-}
-.why-list{display:grid;gap:14px}
-.why-item{
-  display:flex;
-  gap:16px;
-  align-items:flex-start;
-  background:var(--mist);
-  border:1px solid var(--line);
-  border-radius:24px;
-  padding:22px;
-}
-.why-emoji{
-  width:42px;
-  height:42px;
-  flex:0 0 42px;
-  border-radius:15px;
-  background:#fff;
-  display:grid;
-  place-items:center;
-  font-size:1.2rem;
-  box-shadow:0 10px 28px rgba(18,55,31,.07);
-}
-.why-item h4{font-size:1rem;margin-bottom:5px}
-.why-item p{color:var(--ink-soft);font-size:.88rem;line-height:1.6;font-weight:650}
-
-/* AREA */
+/* Area */
 .area{background:var(--mist)}
-.area-grid{
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:42px;
-  align-items:start;
-}
-.area-list{
-  list-style:none;
-  display:grid;
-  gap:12px;
-  margin-top:28px;
-}
-.area-list li{
-  display:flex;
-  gap:13px;
-  align-items:flex-start;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:16px 17px;
-  box-shadow:0 14px 36px rgba(18,55,31,.06);
-}
-.area-list span{
-  width:36px;
-  height:36px;
-  flex:0 0 36px;
-  display:grid;
-  place-items:center;
-  border-radius:14px;
-  background:var(--mist);
-}
-.area-list b{display:block;color:var(--forest);margin-bottom:3px}
-.area-list p{color:var(--ink-soft);font-size:.9rem;line-height:1.55;font-weight:650}
-.map-frame{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:30px;
-  padding:10px;
-  box-shadow:var(--shadow);
-  overflow:hidden;
-}
-.map-frame iframe{width:100%;height:430px;border:0;border-radius:22px;display:block}
+.area-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;align-items:center}
+.area-copy .lead{margin-left:0;margin-right:0}
+.areas{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.area-pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 14px;font-weight:900;color:var(--green);box-shadow:0 10px 26px rgba(20,59,34,.06)}
+.map-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:10px;box-shadow:var(--shadow)}
+.map-card iframe{display:block;width:100%;height:300px;border:0;border-radius:17px;background:var(--mist)}
+.map-caption{font-size:.82rem;line-height:1.5;color:var(--soft);font-weight:700;margin-top:9px;text-align:center}
 
-/* FAQ */
-.faq{background:#fff;padding:82px 22px}
-.faq-grid{
-  display:grid;
-  grid-template-columns:.85fr 1.15fr;
-  gap:44px;
-  align-items:start;
-}
-.faq-list{display:grid;gap:12px}
-details{
-  background:var(--cream);
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:18px 20px;
-}
-summary{
-  cursor:pointer;
-  list-style:none;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  font-weight:900;
-}
-summary::-webkit-details-marker{display:none}
-summary::after{
-  content:'+';
-  width:28px;
-  height:28px;
-  flex:0 0 28px;
-  display:grid;
-  place-items:center;
-  background:var(--mist);
-  color:var(--forest);
-  border-radius:50%;
-  font-weight:900;
-}
-details[open] summary::after{content:'−'}
-details p{
-  padding-top:13px;
-  color:var(--ink-soft);
-  font-size:.92rem;
-  line-height:1.65;
-  font-weight:650;
-}
+/* CTA + Footer */
+.final{background:linear-gradient(160deg,#102d1b 0%,#184728 62%,#102d1b 100%);color:#fff;text-align:center;padding:56px 18px 30px}
+.final h2{color:#fff;margin-bottom:12px}
+.final h2 em{color:var(--lime);font-style:italic}
+.final p{color:rgba(255,255,255,.74);font-weight:650;line-height:1.7;max-width:560px;margin:0 auto 22px}
+.phone{font-family:'Fraunces',serif;font-size:clamp(2.25rem,8vw,4.3rem);font-weight:900;color:var(--lime);text-decoration:none;letter-spacing:-.055em;display:inline-block;margin-bottom:18px}
+.final-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.footer{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;color:rgba(255,255,255,.62);font-size:.86rem;line-height:1.7;font-weight:700}
+.footer a{color:var(--lime);text-decoration:none}
 
-/* CTA */
-.cta{
-  position:relative;
-  overflow:hidden;
-  text-align:center;
-  background:
-    radial-gradient(circle at 50% 30%,rgba(189,236,73,.14),transparent 34%),
-    linear-gradient(145deg,#0f2a19,#194b2a 55%,#0f2a19);
-  color:#fff;
-  padding:94px 22px;
-}
-.cta::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background-image:
-    linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
-  background-size:44px 44px;
-  mask-image:radial-gradient(circle at center,black,transparent 70%);
-  pointer-events:none;
-}
-.cta .container{position:relative;z-index:2}
-.cta h2{color:#fff}
-.cta h2 em{color:var(--lime)}
-.cta .section-lead{color:rgba(255,255,255,.68);margin:0 auto 28px}
-.phone-link{
-  display:inline-block;
-  color:var(--lime);
-  text-decoration:none;
-  font-family:'Fraunces',serif;
-  font-size:clamp(2.3rem,7vw,5rem);
-  line-height:.95;
-  letter-spacing:-.06em;
-  font-weight:900;
-  margin:8px 0 12px;
-}
-.cta-small{
-  margin-bottom:28px;
-  color:rgba(255,255,255,.44);
-  font-size:.78rem;
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:.14em;
-}
-.cta-buttons{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-/* FOOTER */
-footer{
-  background:#0b2113;
-  color:rgba(255,255,255,.66);
-  text-align:center;
-  padding:34px 22px 40px;
-}
-.footer-name{
-  color:#fff;
-  font-family:'Fraunces',serif;
-  font-size:1.18rem;
-  font-weight:900;
-  letter-spacing:-.02em;
-  margin-bottom:8px;
-}
-.footer-meta{font-size:.84rem;line-height:1.8;font-weight:700}
-.footer-meta a{color:var(--lime);text-decoration:none}
-.footer-meta a:hover{text-decoration:underline}
-
-/* MOBILE STICKY */
-.mobile-sticky{
-  position:fixed;
-  left:14px;
-  right:14px;
-  bottom:calc(14px + env(safe-area-inset-bottom));
-  z-index:999;
-  min-height:56px;
-  border-radius:999px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  background:linear-gradient(135deg,var(--lime),var(--lime-soft));
-  color:var(--forest);
-  text-decoration:none;
-  font-weight:900;
-  box-shadow:0 18px 50px rgba(0,0,0,.25);
-  border:1px solid rgba(18,55,31,.12);
-  opacity:0;
-  transform:translateY(18px);
-  pointer-events:none;
-  transition:opacity .22s ease,transform .22s ease;
-}
-body.show-sticky .mobile-sticky{
-  opacity:1;
-  transform:none;
-  pointer-events:auto;
-}
-
-/* ANIMATION */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
-.reveal.visible{opacity:1;transform:none}
-.delay-1{transition-delay:.08s}
-.delay-2{transition-delay:.16s}
-.delay-3{transition-delay:.24s}
-
-/* RESPONSIVE */
-@media(max-width:1040px){
-  .nav-links a:not(.nav-cta){display:none}
-  .hero-badges{grid-template-columns:repeat(2,max-content)}
-  .about-grid,.area-grid,.faq-grid,.why-grid{grid-template-columns:1fr}
-  .about-photo{max-width:480px;margin:0 auto}
-  .services-grid,.steps{grid-template-columns:1fr}
-  .perfect-grid{grid-template-columns:repeat(2,1fr)}
-  .results-top{grid-template-columns:1fr;align-items:start}
-  .tabs{justify-content:flex-start}
-  .compare-card{grid-template-columns:1fr}
-  .compare-side{display:flex;align-items:center;justify-content:space-between;gap:18px}
-  .compare-side p{margin-bottom:0}
-  .drag-tip{flex:0 0 auto}
-}
-@media(max-width:700px){
-  body.has-sticky{padding-bottom:82px}
-  .nav{
-    padding:13px 16px;
-    min-height:72px;
-  }
-  .nav-copy{display:none}
-  .nav-mark{width:39px;height:39px;border-radius:13px}
-  .nav-cta{font-size:.82rem!important;padding:10px 15px!important;min-height:44px;display:inline-flex;align-items:center}
-  .hero{
-    padding:94px 18px 0;
-    min-height:auto;
-  }
-  .hero-kicker{
-    font-size:.64rem;
-    letter-spacing:.095em;
-    padding:8px 12px;
-    margin-bottom:15px;
-  }
-  h1{
-    font-size:clamp(3.05rem,16vw,4.65rem);
-    line-height:.9;
-    margin-bottom:16px;
-  }
-  .hero-sub{
-    font-size:.98rem;
-    line-height:1.62;
-    margin-bottom:18px;
-  }
-  .hero-badges{
-    width:100%;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:8px;
-    margin-bottom:22px;
-  }
-  .badge{
-    font-size:.76rem;
-    min-height:40px;
-    padding:9px 10px;
-    white-space:normal;
-    text-align:center;
-  }
-  .hero-actions{
-    width:100%;
-    margin-bottom:28px;
-    gap:10px;
-  }
-  .hero-actions .btn{
-    width:100%;
-    min-height:54px;
-  }
-  .hero-actions .btn-secondary{
-    min-height:50px;
-    background:transparent;
-  }
-  .hero-card{
-    border-radius:26px 26px 0 0;
-  }
-  .hero-card img{
-    height:236px;
-    object-position:center 62%;
-  }
-  .hero-card-content{
-    position:relative;
-    inset:auto;
-    grid-template-columns:1fr;
-    gap:10px;
-    padding:12px;
-    background:#fff;
-    color:var(--ink);
-  }
-  .hero-card::after{display:none}
-  .quote-card{
-    width:100%;
-    box-shadow:none;
-    background:var(--cream);
-    border:1px solid var(--line);
-    padding:14px;
-    text-align:center;
-  }
-  .quote-card b{font-size:.96rem}
-  .price-chip{
-    width:100%;
-    padding:14px 18px;
-    box-shadow:none;
-  }
-  .price-chip strong{font-size:2rem}
-  .hero-wave svg{height:46px!important}
-  .trust-bar{
-    padding:14px 18px;
-    font-size:.89rem;
-    line-height:1.45;
-  }
-  .trust-bar span{display:block;margin-top:2px}
-  .section,.services,.how,.why,.area,.results{padding:62px 18px}
-  .perfect,.faq,.cta{padding:62px 18px}
+@media(max-width:760px){
+  .brand-text{font-size:.9rem;max-width:180px}
+  .nav{padding:10px 14px}
+  .logo{width:39px;height:39px}
+  .nav-cta{padding:10px 14px;font-size:.86rem}
+  .hero{padding:28px 16px 26px}
+  .hero-inner{grid-template-columns:1fr;gap:20px;text-align:left}
+  .hero-copy{font-size:1rem;margin-bottom:15px}
+  .kicker{font-size:.67rem;margin-bottom:13px}
+  h1{font-size:clamp(2.6rem,15vw,4.15rem);margin-bottom:12px}
+  .hero-points{gap:7px;margin-bottom:18px}
+  .point{font-size:.8rem;padding:8px 10px}
+  .hero-actions .btn{width:100%}
+  .hero-card{border-radius:22px;padding:8px}
+  .hero-card img{height:215px;border-radius:16px}
+  .hero-photo-note{grid-template-columns:auto 1fr;padding:11px;border-radius:15px}
+  .hero-photo-note b{font-size:.88rem}
+  .hero-photo-note span{font-size:.78rem}
+  .section{padding:44px 16px}
+  .section-head{margin-bottom:20px}
+  .lead{font-size:.95rem}
   h2{font-size:2.05rem}
-  .section-lead{font-size:.97rem;line-height:1.7}
-  .center{text-align:left}
-  .center .eyebrow{justify-content:flex-start}
-  .center .eyebrow::after{display:none}
-  .about-grid{gap:34px}
-  .about-photo img{
-    height:390px;
-    border-radius:24px;
-  }
-  .about-sticker{
-    right:10px;
-    bottom:10px;
-    max-width:166px;
-    border-radius:18px;
-    padding:13px 14px;
-  }
-  .about-sticker strong{font-size:1.7rem}
-  .about-sticker span{font-size:.76rem}
-  .quick-facts,.perfect-grid{grid-template-columns:1fr}
-  .service-card,.step,.why-main,.compare-side{padding:22px}
-  .service-card{min-height:auto}
-  .perfect-grid,.services-grid,.steps,.why-list{gap:12px}
-  .results-top{margin-bottom:24px}
-  .tabs{
-    width:100%;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:8px;
-  }
-  .tab{
-    width:100%;
-    padding:12px 10px;
-    font-size:.82rem;
-  }
-  .compare-card{gap:14px}
-  .comparison{
-    border-radius:24px;
-    aspect-ratio:4/3;
-  }
-  .compare-label{
-    top:12px;
-    padding:6px 10px;
-    font-size:.68rem;
-  }
-  .compare-label.before{left:12px}
-  .compare-label.after{right:12px}
-  .compare-handle{
-    width:48px;
-    height:48px;
-  }
-  .compare-side{
-    border-radius:22px;
-    display:block;
-  }
-  .compare-side small{font-size:.68rem}
-  .compare-side h3{font-size:1.65rem}
-  .compare-side p{
-    font-size:.9rem;
-    margin-bottom:14px;
-  }
-  .drag-tip{font-size:.78rem}
-  .why-grid{gap:12px}
-  .why-main h3{font-size:2rem}
-  .why-main::after{font-size:9rem;bottom:-26px}
-  .area-list{margin-top:22px}
-  .map-frame{border-radius:24px;padding:8px}
-  .map-frame iframe{height:320px;border-radius:18px}
-  .faq-grid{gap:26px}
-  details{padding:17px 18px}
-  summary{font-size:.95rem}
-  .cta-buttons .btn{width:100%}
-  footer{padding-bottom:34px}
-  .mobile-sticky{
-    left:12px;
-    right:12px;
-    min-height:56px;
-  }
+  .service-grid{grid-template-columns:1fr;gap:11px}
+  .service-card{padding:18px;border-radius:20px;display:grid;grid-template-columns:auto 1fr;gap:13px;align-items:start}
+  .service-icon{margin:0;width:44px;height:44px;border-radius:14px}
+  .service-card p{font-size:.9rem}
+  .tabs{justify-content:stretch;display:grid;grid-template-columns:1fr 1fr}
+  .tab{padding:10px 8px;font-size:.84rem}
+  .ba-grid{grid-template-columns:1fr;gap:12px}
+  .ba-img-wrap img{height:220px;object-position:center center}
+  .ba-card{border-radius:20px}
+  .ba-caption{font-size:.95rem;padding:12px 14px}
+  .ba-note{font-size:.86rem;margin-top:12px}
+  .area-grid{grid-template-columns:1fr;gap:18px}
+  .areas{margin-top:14px}
+  .area-pill{font-size:.9rem}
+  .map-card iframe{height:230px}
+  .map-caption{text-align:left}
+  .final{padding:46px 16px 26px}
+  .final-actions .btn{width:100%}
+  .footer{font-size:.82rem}
+  .phone{font-size:2.45rem}
 }
 @media(max-width:380px){
-  .hero-badges{grid-template-columns:1fr}
-  h1{font-size:3rem}
-  .nav-cta{font-size:.78rem!important;padding:10px 13px!important}
-  .comparison{aspect-ratio:1/1}
+  .brand-text{display:none}
+  .hero-card img{height:190px}
+  .ba-img-wrap img{height:200px}
+  h1{font-size:2.5rem}
+  .phone{font-size:2.15rem}
 }
-@media(min-width:701px){
-  .mobile-sticky{display:none}
-  body.has-sticky{padding-bottom:0}
-}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .reveal{opacity:1;transform:none}
-}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
 </head>
 <body>
-<nav class="nav" aria-label="Main navigation">
-  <a href="#top" class="nav-brand" aria-label="Noah's All Star Yard Work home">
-    <div class="nav-mark">N</div>
-    <div class="nav-copy">
-      <div class="nav-name">Noah's All Star Yard Work</div>
-      <div class="nav-sub">Redondo Beach</div>
-    </div>
-  </a>
-  <div class="nav-links">
-    <a href="#services">Services</a>
-    <a href="#results">Results</a>
-    <a href="#how">How it works</a>
-    <a href="sms:+13109060130&body=Yard%20Work" class="nav-cta">Text to Book</a>
-  </div>
-</nav>
+<header class="site-header">
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="#top" aria-label="Noah's All Star Yard Work home">
+      <div class="logo">N</div>
+      <div class="brand-text">Noah's All Star Yard Work</div>
+    </a>
+    <a class="nav-cta" href="sms:+13109060130&body=Yard%20Work">Text to Book</a>
+  </nav>
+</header>
 
 <main id="top">
-  <section class="hero sticky-hide-zone" aria-labelledby="hero-title">
+  <section class="hero" aria-labelledby="hero-title">
     <div class="hero-inner">
-      <div class="hero-kicker"><span class="status-dot"></span> Local Redondo Beach yard work</div>
-      <h1 id="hero-title">Your Yard,<br><span>Handled.</span></h1>
-      <p class="hero-sub">Hi, I'm <strong>Noah</strong>, a 13-year-old from Redondo Beach. I bike or walk to nearby jobs and help neighbors with the yard stuff they do not want to deal with.</p>
-
-      <div class="hero-badges" aria-label="Quick details">
-        <div class="badge">🌿 <strong>$20+</strong> starting price</div>
-        <div class="badge">🚲 Bike or walk local</div>
-        <div class="badge">📅 After school & weekends</div>
-        <div class="badge">📸 Text photos</div>
-      </div>
-
-      <div class="hero-actions">
-        <a href="sms:+13109060130&body=Yard%20Work" class="btn btn-primary">📱 Text Noah to Book</a>
-        <a href="#results" class="btn btn-secondary">See Before & After</a>
-      </div>
-    </div>
-
-    <div class="hero-card">
-      <img src="images/hero-bg.jpeg" alt="Clean yard work project in Redondo Beach">
-      <div class="hero-card-content">
-        <div class="quote-card">
-          <small>Simple booking</small>
-          <b>Text what you need, send a photo, and Noah will give you a clear quote.</b>
+      <div>
+        <div class="kicker"><span></span> Yard work by a local Redondo Beach kid</div>
+        <h1 id="hero-title">Small yard jobs,<br><em>done right.</em></h1>
+        <p class="hero-copy">Hi, I'm <strong>Noah</strong>. I'm 13 and I help neighbors with simple yard work in Redondo Beach and South Torrance.</p>
+        <div class="hero-points" aria-label="Quick details">
+          <div class="point">💵 Starts at $20</div>
+          <div class="point">📸 Text photos for a quote</div>
+          <div class="point">🚲 Bike or walk local</div>
         </div>
-        <div class="price-chip"><strong>$20+</strong><span>starts at</span></div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="sms:+13109060130&body=Yard%20Work">📱 Text Noah to Book</a>
+          <a class="btn btn-secondary" href="#results">See Before & After</a>
+        </div>
       </div>
-    </div>
-
-    <div class="hero-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 72" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;height:72px;display:block">
-        <path d="M0,72 L0,40 C170,6 318,66 480,35 C665,0 810,68 988,34 C1160,2 1300,42 1440,16 L1440,72 Z" fill="#fbfff8"/>
-      </svg>
-    </div>
-  </section>
-
-  <div class="trust-bar">
-    🌿 Text "Yard Work" to 310-906-0130 <span>for a quick quote, starting at $20</span>
-  </div>
-
-  <section class="section about sticky-hide-zone" id="about">
-    <div class="container about-grid">
-      <div class="about-photo reveal">
-        <img src="images/noah.jpeg" alt="Noah, the young owner of Noah's All Star Yard Work">
-        <div class="about-sticker"><strong>13</strong><span>years old, local, and ready to work</span></div>
-      </div>
-      <div class="about-copy reveal delay-1">
-        <div class="eyebrow">Who I am</div>
-        <h2>A neighborhood kid who actually <em>shows up</em></h2>
-        <p>I started this because I wanted to earn my own money by doing real work. I am not a big landscaping company. I am Noah, a local kid with a bike, basic tools, and a strong work ethic.</p>
-        <p>When I take a job, I take it seriously. I show up when we agree, work hard, clean up after myself, and try to make every yard look better than when I got there.</p>
-        <div class="quick-facts">
-          <div class="fact"><b>Local</b><span>Redondo Beach and nearby streets</span></div>
-          <div class="fact"><b>Simple</b><span>Text photos and get a quote</span></div>
-          <div class="fact"><b>Affordable</b><span>Small jobs starting at $20</span></div>
+      <div class="hero-card" aria-label="Noah's yard work photo card">
+        <img src="images/hero-bg.jpeg" alt="Clean yard work in Redondo Beach">
+        <div class="hero-photo-note">
+          <img class="noah-avatar" src="images/noah.jpeg" alt="Noah, owner of Noah's All Star Yard Work">
+          <div><b>Simple local help</b><span>Text what you need and send a photo. I will give you a clear quote.</span></div>
         </div>
       </div>
     </div>
@@ -1284,319 +209,128 @@ body.show-sticky .mobile-sticky{
 
   <section class="section services" id="services">
     <div class="container">
-      <div class="center reveal">
+      <div class="section-head">
         <div class="eyebrow">What I do</div>
-        <h2>Small yard jobs done with <em>real effort</em></h2>
-        <p class="section-lead">These are the jobs I can handle best. Text me a photo and I will let you know if it is something I can do.</p>
+        <h2>Simple yard help</h2>
+        <p class="lead">Small outdoor jobs that make your yard, walkway, or trash cans look cleaner.</p>
       </div>
-
-      <div class="services-grid">
-        <article class="service-card reveal" data-number="01">
+      <div class="service-grid">
+        <article class="service-card">
           <div class="service-icon">🍂</div>
-          <h3>Leaf Raking & Yard Cleanup</h3>
-          <p>I clear leaves, loose branches, and light yard mess so your space looks clean again.</p>
-          <ul>
-            <li>Raking and bagging</li>
-            <li>Light debris cleanup</li>
-            <li>Great for quick refreshes</li>
-          </ul>
+          <div><h3>Yard cleanup</h3><p>Raking leaves, bagging light debris, and cleaning up messy yard areas.</p></div>
         </article>
-        <article class="service-card reveal delay-1" data-number="02">
+        <article class="service-card">
           <div class="service-icon">🌿</div>
-          <h3>Weed Removal</h3>
-          <p>I pull weeds from garden beds, walkways, edges, and small outdoor areas.</p>
-          <ul>
-            <li>Flower beds</li>
-            <li>Side yards and edges</li>
-            <li>Walkways and small patches</li>
-          </ul>
+          <div><h3>Weed removal</h3><p>Pulling weeds from small garden beds, edges, walkways, and side yards.</p></div>
         </article>
-        <article class="service-card reveal delay-2" data-number="03">
+        <article class="service-card">
           <div class="service-icon">🪣</div>
-          <h3>Trash Can Cleaning</h3>
-          <p>I wash bins inside and out so they smell better and look way cleaner.</p>
-          <ul>
-            <li>Soap and rinse</li>
-            <li>Inside and outside cleaning</li>
-            <li>Great after trash day</li>
-          </ul>
+          <div><h3>Trash can cleaning</h3><p>Washing bins inside and out so they look better and smell cleaner.</p></div>
         </article>
       </div>
-      <p class="service-note reveal"><strong>Prices depend on the job.</strong> Starting at $20 for smaller jobs. Bigger jobs may cost more, but I will always keep it clear before I start.</p>
     </div>
   </section>
 
-  <section class="perfect" id="perfect">
+  <section class="section results" id="results">
     <div class="container">
-      <div class="center reveal">
-        <div class="eyebrow">Perfect for</div>
-        <h2>When you need help, but not a whole landscaping crew</h2>
-        <p class="section-lead">No contracts, no app, no giant company. Just a local kid helping neighbors with smaller outdoor jobs.</p>
-      </div>
-      <div class="perfect-grid">
-        <div class="perfect-card reveal"><div>🏡</div><h3>Busy families</h3><p>Get the yard cleaned up without spending your weekend on it.</p></div>
-        <div class="perfect-card reveal delay-1"><div>🧹</div><h3>Quick cleanups</h3><p>Leaves, weeds, and small messes that make the yard look worse.</p></div>
-        <div class="perfect-card reveal delay-2"><div>🗑️</div><h3>Smelly bins</h3><p>Trash cans can get gross fast. I can help refresh them.</p></div>
-        <div class="perfect-card reveal delay-3"><div>🤝</div><h3>Neighbors</h3><p>Support a young local entrepreneur learning how to build a business.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section results sticky-hide-zone" id="results">
-    <div class="container">
-      <div class="results-top reveal">
-        <div>
-          <div class="eyebrow">My work</div>
-          <h2>Before & <em>After</em></h2>
-          <p class="section-lead">Drag the handle to compare the same job in one view. This is much easier to see on a phone.</p>
-        </div>
-        <div class="tabs" role="tablist" aria-label="Before and after categories">
-          <button class="tab active" type="button" role="tab" aria-selected="true" aria-controls="ba-yard" onclick="switchBA(this,'yard')">🌿 Yard cleanup</button>
-          <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="ba-trash" onclick="switchBA(this,'trash')">🪣 Trash cans</button>
-        </div>
+      <div class="section-head">
+        <div class="eyebrow">Before & after</div>
+        <h2>Real cleanup results</h2>
+        <p class="lead">Clear before and after photos that load reliably on mobile.</p>
       </div>
 
-      <div class="ba-panel active" id="ba-yard" role="tabpanel">
-        <div class="compare-card">
-          <div class="comparison reveal" data-compare>
-            <img class="after-img" src="images/trimmed.jpeg" alt="Clean yard after Noah cleaned it">
-            <img class="before-img" src="images/overgrown.jpeg" alt="Overgrown yard before Noah cleaned it">
-            <span class="compare-label before">Before</span>
-            <span class="compare-label after">After</span>
-            <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare yard cleanup before and after">
-            <span class="compare-handle" aria-hidden="true">↔</span>
-          </div>
-          <div class="compare-side reveal delay-1">
-            <div>
-              <small>🌿 Yard cleanup</small>
-              <h3>Messy to clean in one swipe</h3>
-              <p>Instead of stacking two huge photos, this view lets people compare the exact change without losing their place.</p>
+      <div class="tabs" role="tablist" aria-label="Before and after examples">
+        <button class="tab active" type="button" role="tab" aria-selected="true" aria-controls="yard-results" onclick="showResults(this,'yard-results')">🌿 Yard Cleanup</button>
+        <button class="tab" type="button" role="tab" aria-selected="false" aria-controls="trash-results" onclick="showResults(this,'trash-results')">🪣 Trash Cans</button>
+      </div>
+
+      <div class="ba-set active" id="yard-results" role="tabpanel">
+        <div class="ba-grid">
+          <article class="ba-card">
+            <div class="ba-img-wrap">
+              <img src="images/overgrown.jpeg" alt="Before yard cleanup with leaves and debris">
+              <span class="ba-label">Before</span>
             </div>
-            <span class="drag-tip">Drag the slider</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="ba-panel" id="ba-trash" role="tabpanel">
-        <div class="compare-card">
-          <div class="comparison" data-compare>
-            <img class="after-img" src="images/after.jpeg" alt="Trash can after cleaning">
-            <img class="before-img" src="images/before.jpeg" alt="Trash can before cleaning">
-            <span class="compare-label before">Before</span>
-            <span class="compare-label after">After</span>
-            <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare trash can cleaning before and after">
-            <span class="compare-handle" aria-hidden="true">↔</span>
-          </div>
-          <div class="compare-side">
-            <div>
-              <small>🪣 Trash cans</small>
-              <h3>Gross bins to refreshed bins</h3>
-              <p>The slider keeps the before and after connected, so the improvement is clear even on a small screen.</p>
+            <div class="ba-caption">Messy yard with leaves and debris.</div>
+          </article>
+          <article class="ba-card">
+            <div class="ba-img-wrap">
+              <img src="images/trimmed.jpeg" alt="After yard cleanup with clean grass">
+              <span class="ba-label after">After</span>
             </div>
-            <span class="drag-tip">Drag the slider</span>
-          </div>
+            <div class="ba-caption">Cleaner and easier to enjoy.</div>
+          </article>
         </div>
+        <p class="ba-note">Yard cleanup photos from an actual local job.</p>
       </div>
-    </div>
-  </section>
 
-  <section class="section how" id="how">
-    <div class="container">
-      <div class="center reveal">
-        <div class="eyebrow">How it works</div>
-        <h2>Booking is easy</h2>
-        <p class="section-lead">You do not need to download anything. Just text me and we will figure out the job.</p>
-      </div>
-      <div class="steps">
-        <div class="step reveal">
-          <div class="step-number">1</div>
-          <h3>Text me</h3>
-          <p>Send <strong>"Yard Work"</strong> to <strong>310-906-0130</strong>. Tell me what you need done.</p>
+      <div class="ba-set" id="trash-results" role="tabpanel">
+        <div class="ba-grid">
+          <article class="ba-card">
+            <div class="ba-img-wrap">
+              <img src="images/before.jpeg" alt="Before trash can cleaning">
+              <span class="ba-label">Before</span>
+            </div>
+            <div class="ba-caption">Dirty bin before cleaning.</div>
+          </article>
+          <article class="ba-card">
+            <div class="ba-img-wrap">
+              <img src="images/after.jpeg" alt="After trash can cleaning">
+              <span class="ba-label after">After</span>
+            </div>
+            <div class="ba-caption">Washed out and refreshed.</div>
+          </article>
         </div>
-        <div class="step reveal delay-1">
-          <div class="step-number">2</div>
-          <h3>Send a photo</h3>
-          <p>A quick photo helps me understand the job and give you a better price.</p>
-        </div>
-        <div class="step reveal delay-2">
-          <div class="step-number">3</div>
-          <h3>I get it done</h3>
-          <p>We pick a time after school or on the weekend. You pay when the job is done.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section why" id="why">
-    <div class="container">
-      <div class="center reveal">
-        <div class="eyebrow">Why hire Noah</div>
-        <h2>A small business with a lot of <em>hustle</em></h2>
-        <p class="section-lead">You get affordable help with small yard jobs, and you support a young entrepreneur learning how to build something real.</p>
-      </div>
-      <div class="why-grid">
-        <div class="why-main reveal">
-          <h3>Not a big company. <em>Just Noah.</em></h3>
-          <p>I keep it simple: text me, tell me the job, and I will let you know if I can do it. I care about doing good work because every job helps my reputation in the neighborhood.</p>
-        </div>
-        <div class="why-list">
-          <div class="why-item reveal delay-1"><div class="why-emoji">💬</div><div><h4>Easy to reach</h4><p>Texting is the fastest way to book or ask if you are in range.</p></div></div>
-          <div class="why-item reveal delay-2"><div class="why-emoji">💵</div><div><h4>Affordable for small jobs</h4><p>Starting at $20, with simple pricing based on the size of the job.</p></div></div>
-          <div class="why-item reveal delay-3"><div class="why-emoji">✅</div><div><h4>I want repeat customers</h4><p>I try to do the job right so you would want to call me again.</p></div></div>
-        </div>
+        <p class="ba-note">Trash can cleaning is quick, simple, and great after trash day.</p>
       </div>
     </div>
   </section>
 
   <section class="section area" id="area">
     <div class="container area-grid">
-      <div class="reveal">
-        <div class="eyebrow">Where I go</div>
-        <h2>Serving <em>Redondo Beach</em> and nearby areas</h2>
-        <p class="section-lead">Since I travel by bike or on foot, I stay local. If you are not sure whether I can get to you, text your street and I will let you know.</p>
-        <ul class="area-list">
-          <li><span>📍</span><div><b>Redondo Beach</b><p>North Redondo, South Redondo, and nearby neighborhoods.</p></div></li>
-          <li><span>🏖️</span><div><b>Nearby areas</b><p>Hermosa Beach, parts of Torrance, and parts of Lawndale depending on the distance.</p></div></li>
-          <li><span>🚲</span><div><b>Bike and walking range</b><p>Text me your street and I will be honest about whether I can make it there.</p></div></li>
-        </ul>
+      <div class="area-copy">
+        <div class="eyebrow">Service area</div>
+        <h2>Redondo Beach & South Torrance</h2>
+        <p class="lead">I bike or walk to nearby jobs, so I keep the area simple and local. Text me your street and I will tell you if I can make it there.</p>
+        <div class="areas" aria-label="Service areas">
+          <div class="area-pill">📍 Redondo Beach</div>
+          <div class="area-pill">📍 South Torrance</div>
+        </div>
       </div>
-      <div class="map-frame reveal delay-1">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13231.5!2d-118.3884!3d33.8489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b4e6b2b1b1b1%3A0x1!2sRedondo+Beach%2C+CA!5e0!3m2!1sen!2sus!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Redondo Beach service area"></iframe>
-      </div>
-    </div>
-  </section>
-
-  <section class="faq" id="faq">
-    <div class="container faq-grid">
-      <div class="reveal">
-        <div class="eyebrow">Quick questions</div>
-        <h2>Good to know before you text</h2>
-        <p class="section-lead">If the job is too big or too far, I will be honest. Smaller local jobs are what I do best.</p>
-      </div>
-      <div class="faq-list reveal delay-1">
-        <details open>
-          <summary>How much does it cost?</summary>
-          <p>Small jobs start at $20. The final price depends on the size of the job, how long it will take, and what needs to be cleaned up.</p>
-        </details>
-        <details>
-          <summary>When can Noah come?</summary>
-          <p>Usually after school or on weekends. Text 310-906-0130 and we can pick a time that works.</p>
-        </details>
-        <details>
-          <summary>Can I send photos first?</summary>
-          <p>Yes. Photos are the best way to get a faster quote. Send a picture of the yard, weeds, leaves, or trash cans.</p>
-        </details>
-        <details>
-          <summary>What if I am outside Redondo Beach?</summary>
-          <p>Text your street and I will let you know. Since I bike or walk, I keep jobs close by.</p>
-        </details>
+      <div class="map-card">
+        <iframe title="Map centered around the Redondo Beach and South Torrance service area" src="https://www.openstreetmap.org/export/embed.html?bbox=-118.4070%2C33.8000%2C-118.3580%2C33.8460&amp;layer=mapnik"></iframe>
+        <div class="map-caption">Map shows the general area Noah serves: Redondo Beach and South Torrance.</div>
       </div>
     </div>
   </section>
 
-  <section class="cta sticky-hide-zone" id="book">
-    <div class="container reveal">
-      <div class="eyebrow" style="justify-content:center;color:var(--lime)">Ready to book?</div>
-      <h2>Text Noah and get your yard <em>cleaned up</em></h2>
-      <p class="section-lead">Send "Yard Work," a quick description, and a photo if you have one. I will reply with whether I can do it and what it will cost.</p>
-      <a href="sms:+13109060130&body=Yard%20Work" class="phone-link">310-906-0130</a>
-      <div class="cta-small">Text "Yard Work" to get started</div>
-      <div class="cta-buttons">
-        <a href="sms:+13109060130&body=Yard%20Work" class="btn btn-primary">📱 Send Me a Text</a>
-        <a href="#services" class="btn btn-secondary">Review Services</a>
+  <section class="final" id="book">
+    <div class="container">
+      <h2>Want help with your <em>yard?</em></h2>
+      <p>Text Noah with what you need, send a photo if you can, and he will give you a quick quote. Small jobs start at $20.</p>
+      <a class="phone" href="sms:+13109060130&body=Yard%20Work">310-906-0130</a>
+      <div class="final-actions">
+        <a class="btn btn-primary" href="sms:+13109060130&body=Yard%20Work">📱 Text Noah to Book</a>
       </div>
+      <footer class="footer">
+        Noah's All Star Yard Work · Redondo Beach & South Torrance · Starting at $20 · <a href="sms:+13109060130&body=Yard%20Work">310-906-0130</a>
+      </footer>
     </div>
   </section>
 </main>
 
-<footer class="sticky-hide-zone">
-  <div class="footer-name">Noah's All Star Yard Work</div>
-  <div class="footer-meta">Redondo Beach, CA · <a href="sms:+13109060130&body=Yard%20Work">310-906-0130</a> · Starting at $20 · A 13-year-old's local yard work business 🚲</div>
-</footer>
-
-<a href="sms:+13109060130&body=Yard%20Work" class="mobile-sticky" aria-label="Text Noah at 310-906-0130">📱 Text Noah to Book</a>
-
 <script>
-const reveals = document.querySelectorAll('.reveal');
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-reveals.forEach(el => revealObserver.observe(el));
-
-function switchBA(button, type) {
-  document.querySelectorAll('.ba-panel').forEach(panel => panel.classList.remove('active'));
+function showResults(button, panelId){
   document.querySelectorAll('.tab').forEach(tab => {
     tab.classList.remove('active');
     tab.setAttribute('aria-selected','false');
   });
-
-  const target = document.getElementById('ba-' + type);
-  if (target) {
-    target.classList.add('active');
-    target.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-  }
-
+  document.querySelectorAll('.ba-set').forEach(panel => panel.classList.remove('active'));
   button.classList.add('active');
   button.setAttribute('aria-selected','true');
-
-  target?.querySelectorAll('[data-compare]').forEach(setupComparator);
+  const panel = document.getElementById(panelId);
+  if(panel) panel.classList.add('active');
 }
-
-function setupComparator(compare) {
-  const range = compare.querySelector('.compare-range');
-  if (!range || range.dataset.ready === 'true') return;
-
-  const update = () => {
-    const value = Math.max(0, Math.min(100, Number(range.value)));
-    compare.style.setProperty('--position', value + '%');
-  };
-
-  range.addEventListener('input', update);
-  range.addEventListener('change', update);
-  range.dataset.ready = 'true';
-  update();
-}
-
-document.querySelectorAll('[data-compare]').forEach(setupComparator);
-
-const body = document.body;
-const hero = document.querySelector('.hero');
-const hideZones = Array.from(document.querySelectorAll('.sticky-hide-zone'));
-let heroPassed = false;
-let inHideZone = true;
-
-function updateSticky() {
-  const mobile = window.matchMedia('(max-width: 700px)').matches;
-  if (!mobile) {
-    body.classList.remove('show-sticky','has-sticky');
-    return;
-  }
-
-  const scrollY = window.scrollY || window.pageYOffset;
-  const heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 0;
-  heroPassed = scrollY > heroBottom - 100;
-
-  inHideZone = hideZones.some(zone => {
-    const rect = zone.getBoundingClientRect();
-    return rect.top < window.innerHeight * 0.82 && rect.bottom > window.innerHeight * 0.18;
-  });
-
-  if (heroPassed && !inHideZone) {
-    body.classList.add('show-sticky','has-sticky');
-  } else {
-    body.classList.remove('show-sticky','has-sticky');
-  }
-}
-
-window.addEventListener('scroll', updateSticky, { passive:true });
-window.addEventListener('resize', updateSticky);
-window.addEventListener('load', updateSticky);
-updateSticky();
 </script>
 </body>
 </html>
